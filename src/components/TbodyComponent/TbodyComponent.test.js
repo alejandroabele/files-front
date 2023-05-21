@@ -1,19 +1,27 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import TbodyComponent from './TbodyComponent';
+import { useSelector } from 'react-redux';
+import Table from 'react-bootstrap/Table';
 
+jest.mock('react-redux', () => ({
+    useSelector: jest.fn(),
+}));
 describe('TbodyComponent', () => {
+    beforeEach(() => {
+        useSelector.mockClear();
+    });
     it('renders no lines available message when fileData is empty', () => {
-        const fileData = [];
-        render(<TbodyComponent fileData={fileData} />);
+        useSelector.mockReturnValueOnce([]);
+        render(<Table><TbodyComponent /></Table>);
 
-        const noLinesMessage = screen.getByText('No lines available');
-        
+        const noLinesMessage = screen.getByText('No files available');
+
         expect(noLinesMessage).toBeInTheDocument();
     });
 
     it('renders file data with lines', () => {
-        const fileData = [
+        useSelector.mockReturnValueOnce([
             {
                 file: 'test1.csv',
                 lines: []
@@ -25,8 +33,8 @@ describe('TbodyComponent', () => {
                     { text: 'Line 2', number: 456, hex: 'def' }
                 ]
             }
-        ];
-        render(<TbodyComponent fileData={fileData} />);
+        ]);
+        render(<Table><TbodyComponent /></Table>);
 
         const noLinesMessage = screen.getByText('No lines available');
         expect(noLinesMessage).toBeInTheDocument();

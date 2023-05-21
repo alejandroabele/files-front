@@ -1,16 +1,19 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 
-const TbodyComponent = ({ fileData }) => {
+const TbodyComponent = () => {
+    const files = useSelector(state => state.files);
+
     return (
         <tbody>
 
-            {fileData.length === 0 ? <React.Fragment>
+            {files.length === 0 ? <React.Fragment>
 
                 <tr>
                     <td colSpan="4" >No files available</td>
                 </tr>
             </React.Fragment> :
-                fileData.map(file => (
+                files.map(file => (
                     <React.Fragment key={file.file}>
                         {file.lines.length === 0 ? (
                             <tr>

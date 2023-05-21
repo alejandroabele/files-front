@@ -1,7 +1,6 @@
 import React from 'react'
 import { useApiContext } from '../../context/ApiProvider'
 const TheadComponent = () => {
-
     const { headers } = useApiContext()
     return (
         <thead>

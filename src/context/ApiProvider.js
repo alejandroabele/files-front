@@ -1,27 +1,19 @@
-import React, { createContext, useContext } from 'react';
-import { getFilesService } from '../services/files'
-
+import React, { createContext, useContext, useEffect, useState } from 'react';
 export const ApiContext = createContext({
 });
 
-
-
 const ApiContextProvider = ({ children }) => {
+    const [headers, setHeaders] = useState([])
 
-    const getFiles = async () => {
-        try {
-            const data = await getFilesService()
-            return data
-        } catch (error) {
-            throw error;
-        }
-    }
+    useEffect(() => {
+        setHeaders(['Filename', 'Text', 'Number', 'Hex'])
+    }, [])
+
 
     return (
         <ApiContext.Provider
             value={{
-                getFiles,
-
+                headers
             }}
         >
             {children}

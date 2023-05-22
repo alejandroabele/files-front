@@ -19,7 +19,8 @@ function App() {
             <MainLayout>
               <MainPage />
             </MainLayout>} />
-          <Route path="*" element={<DefaultPage />} />
+          <Route path="*" element={<MainLayout>
+            <DefaultPage /></MainLayout>} />
         </Routes>
       </ApiProvider>
     </BrowserRouter>)

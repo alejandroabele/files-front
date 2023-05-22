@@ -57,7 +57,7 @@ const MainComponent = () => {
                 type="text"
                 value={filterValue}
                 onChange={handleFilterChange}
-                placeholder="Filtrar por nombre"
+                placeholder="filter by name"
             />
             <Table striped bordered hover>
                 <TheadComponent />

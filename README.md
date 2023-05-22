@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# Files front app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Frontend to view and filter files
 
-## Available Scripts
+## About Code
 
-In the project directory, you can run:
+This project is built with react, react-bootstrap and redux. It allows to be able to visualize and filter csv files parsed to json format through an api. This project uses redux and context api in different places for application state handling. The choice to use both technologies is to visualize the differences between them. In the project you can also visualize customs hooks and a layered architecture
 
-### `npm start`
+The project uses the following fundamental dependencies (libraries) for the solution
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* [Node.js](https://nodejs.org): Runtime environment
+* [React](https://es.reactjs.org/): Framework javascript
+* [React Boostrap](https://react-bootstrap.github.io/): Framework UI
+* [Redux](https://es.redux.js.org/): State handler
+* [Docker Compose](https://docs.docker.com/compose/): Container tool
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites
 
-### `npm test`
+1. Install [Node.js](https://nodejs.org)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installing dependencies (libraries) without docker compose
 
-### `npm run build`
+First, enter the base folder of the project directory:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+cd files-front
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Second, install dependencies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+npm install
+```
 
-### `npm run eject`
+Run project
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```sh
+npm run start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Running with docker compose
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Previous requirements
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Make sure you have Docker and Docker Compose installed on your system.
 
-## Learn More
+### Steps
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+First, enter the base folder of the project directory:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+cd files-front
+```
 
-### Code Splitting
+Second, install dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```sh
+npm install
+```
 
-### Analyzing the Bundle Size
+Third, run app with docker-compose. This command executes docker-compose
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```sh
+npm run run-app
+```
 
-### Making a Progressive Web App
+Or you can do it manually with the following command
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```sh
+docker-compose up --build
+```
 
-### Advanced Configuration
+the default exposed port is 3000, you can change this in the "docker-compose.yml" file
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Configuring development properties
 
-### Deployment
+In this sample project, the .env file is included in the repository to make it easy to set up and run locally. However, it is important to note that in production environments it is not recommended to version the .env file together with the source code. This is because the .env file often contains sensitive information such as secret keys, passwords, and other environment-specific configuration data.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+In these files you can configure:
 
-### `npm run build` fails to minify
+* Backend url (REACT_APP_API_URL)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Test
+
+This app uses the Testing Library/React to perform tests on React components. This library is based on Jest, a widely used testing framework in the JavaScript ecosystem.
+
+```sh
+npm run test
+```
+
+## Contact
+
+### You can reach out to me via email or connect with me on social media
+
+* Email: [alejandroabele@hotmai.com.ar](mailto:alejandroabele@hotmai.com.ar)
+* LinkedIn: [Alejandro Abele](https://www.linkedin.com/in/alejandro-abele/)

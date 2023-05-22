@@ -52,13 +52,7 @@ First, enter the base folder of the project directory:
 cd files-front
 ```
 
-Second, install dependencies
-
-```sh
-npm install
-```
-
-Third, run app with docker-compose. This command executes docker-compose
+Second, run app with docker-compose. This command executes docker-compose
 
 ```sh
 npm run run-app
